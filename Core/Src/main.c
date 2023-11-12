@@ -212,18 +212,22 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : in0_Pin */
-  GPIO_InitStruct.Pin = in0_Pin;
+  /*Configure GPIO pin : BUTTON_1_Pin */
+  GPIO_InitStruct.Pin = BUTTON_1_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(in0_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(BUTTON_1_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback ( TIM_HandleTypeDef * htim ){
+	if (htim->Instance == TIM2){
+		button_reading();
+	}
+}
 /* USER CODE END 4 */
 
 /**
