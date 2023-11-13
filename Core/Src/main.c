@@ -200,23 +200,45 @@ static void MX_GPIO_Init(void)
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, out0_Pin|out1_Pin|out2_Pin|out3_Pin
-                          |out4_Pin|out5_Pin|out6_Pin|out7_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, RED_1_Pin|YELLOW_1_Pin|GREEN_1_Pin|RED_2_Pin
+                          |YELLOW_2_Pin|GREEN_2_Pin|MODE_A_Pin|MODE_B_Pin
+                          |MODE_C_Pin|MODE_D_Pin, GPIO_PIN_RESET);
 
-  /*Configure GPIO pins : out0_Pin out1_Pin out2_Pin out3_Pin
-                           out4_Pin out5_Pin out6_Pin out7_Pin */
-  GPIO_InitStruct.Pin = out0_Pin|out1_Pin|out2_Pin|out3_Pin
-                          |out4_Pin|out5_Pin|out6_Pin|out7_Pin;
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, A1_Pin|B1_Pin|C1_Pin|C3_Pin
+                          |D3_Pin|A4_Pin|B4_Pin|C4_Pin
+                          |D4_Pin|D1_Pin|A2_Pin|B2_Pin
+                          |C2_Pin|D2_Pin|A3_Pin|B3_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pins : RED_1_Pin YELLOW_1_Pin GREEN_1_Pin RED_2_Pin
+                           YELLOW_2_Pin GREEN_2_Pin MODE_A_Pin MODE_B_Pin
+                           MODE_C_Pin MODE_D_Pin */
+  GPIO_InitStruct.Pin = RED_1_Pin|YELLOW_1_Pin|GREEN_1_Pin|RED_2_Pin
+                          |YELLOW_2_Pin|GREEN_2_Pin|MODE_A_Pin|MODE_B_Pin
+                          |MODE_C_Pin|MODE_D_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : in0_Pin */
-  GPIO_InitStruct.Pin = in0_Pin;
+  /*Configure GPIO pins : BUTTON_1_Pin BUTTON_2_Pin BUTTON_3_Pin */
+  GPIO_InitStruct.Pin = BUTTON_1_Pin|BUTTON_2_Pin|BUTTON_3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(in0_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : A1_Pin B1_Pin C1_Pin C3_Pin
+                           D3_Pin A4_Pin B4_Pin C4_Pin
+                           D4_Pin D1_Pin A2_Pin B2_Pin
+                           C2_Pin D2_Pin A3_Pin B3_Pin */
+  GPIO_InitStruct.Pin = A1_Pin|B1_Pin|C1_Pin|C3_Pin
+                          |D3_Pin|A4_Pin|B4_Pin|C4_Pin
+                          |D4_Pin|D1_Pin|A2_Pin|B2_Pin
+                          |C2_Pin|D2_Pin|A3_Pin|B3_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
