@@ -43,18 +43,18 @@ void button_reading (void) {
 					buttonBuffer[i] = BUTTON_IS_PRESSED;
 					counterForButtonPress1s[i] = DURATION_FOR_AUTO_INCREASING;
 				}
-				else {
-					counterForButtonPress1s[i]--;
-					if (counterForButtonPress1s[i] == 0){
-						if (debounceButtonBuffer3[i] == BUTTON_IS_PRESSED){
-							counterForButtonPress1s[i]= DURATION_FOR_AUTO_INCREASING;
-							buttonBuffer[i] = BUTTON_IS_RELEASED;
-							flagForButtonPress1s[i] = 1;
-						}
-						if (debounceButtonBuffer3[i] == BUTTON_IS_RELEASED){
-							counterForButtonPress1s[i] = DURATION_FOR_AUTO_INCREASING;
-							flagForButtonPress1s[i] = 0;
-						}
+			}
+			else {
+				counterForButtonPress1s[i]--;
+				if (counterForButtonPress1s[i] == 0){
+					if (debounceButtonBuffer3[i] == BUTTON_IS_PRESSED){
+						counterForButtonPress1s[i]= DURATION_FOR_AUTO_INCREASING;
+						buttonBuffer[i] = BUTTON_IS_RELEASED;
+						flagForButtonPress1s[i] = 1;
+					}
+					if (debounceButtonBuffer3[i] == BUTTON_IS_RELEASED){
+						counterForButtonPress1s[i] = DURATION_FOR_AUTO_INCREASING;
+						flagForButtonPress1s[i] = 0;
 					}
 				}
 			}

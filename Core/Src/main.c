@@ -22,6 +22,10 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "7_segment.h"
+#include "global.h"
+#include "timer.h"
+#include "input_reading.h"
+#include "mode_1.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -56,13 +60,7 @@ static void MX_TIM2_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-int timer_counter = 0;
-int timer_flag = 0;
-int TIMER_CYCLE = 10;
-void setTimer(int duration){
-	timer_counter = duration /TIMER_CYCLE;
-	timer_flag = 0;
-}
+
 /* USER CODE END 0 */
 
 /**
@@ -95,7 +93,7 @@ int main(void)
   MX_GPIO_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-
+  HAL_TIM_Base_Start_IT (&htim2 );
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -103,8 +101,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  display7SEG_1(46);
-	  display7SEG_2(98);
+	  runMode1();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -252,7 +249,12 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-
+void HAL_TIM_PeriodElapsedCallback (TIM_HandleTypeDef * htim){
+	if (htim->Instance == TIM2){
+		button_reading();
+	}
+	timer_run();
+}
 /* USER CODE END 4 */
 
 /**
