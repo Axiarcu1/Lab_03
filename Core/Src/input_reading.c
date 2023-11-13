@@ -13,8 +13,7 @@
 #define DURATION_FOR_AUTO_INCREASING	100
 #define BUTTON_IS_PRESSED 				GPIO_PIN_RESET
 #define BUTTON_IS_RELEASED 				GPIO_PIN_SET
-// the buffer that the final result is stored after
-// debouncing
+// the buffer that the final result is stored after debouncing
 static GPIO_PinState buttonBuffer[N0_OF_BUTTONS] = {BUTTON_IS_RELEASED, BUTTON_IS_RELEASED, BUTTON_IS_RELEASED};
 // we define two buffers for debouncing
 static GPIO_PinState debounceButtonBuffer1[N0_OF_BUTTONS] = {BUTTON_IS_RELEASED, BUTTON_IS_RELEASED, BUTTON_IS_RELEASED};
