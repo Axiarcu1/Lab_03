@@ -27,7 +27,7 @@
 #include "input_reading.h"
 #include "mode_1.h"
 #include "mode_2.h"
-//#include "mode_3.h"
+#include "mode_3.h"
 //#include "mode_4.h"
 /* USER CODE END Includes */
 
@@ -106,7 +106,7 @@ int main(void)
     /* USER CODE END WHILE */
 	  runMode1();
 	  runMode2();
-//	  runMode3();
+	  runMode3();
 //	  runMode4();
     /* USER CODE BEGIN 3 */
   }
