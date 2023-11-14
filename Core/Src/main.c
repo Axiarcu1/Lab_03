@@ -26,6 +26,9 @@
 #include "timer.h"
 #include "input_reading.h"
 #include "mode_1.h"
+#include "mode_2.h"
+//#include "mode_3.h"
+//#include "mode_4.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -102,6 +105,9 @@ int main(void)
   {
     /* USER CODE END WHILE */
 	  runMode1();
+	  runMode2();
+//	  runMode3();
+//	  runMode4();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -206,7 +212,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOA, RED_1_Pin|YELLOW_1_Pin|GREEN_1_Pin|RED_2_Pin
                           |YELLOW_2_Pin|GREEN_2_Pin|MODE_A_Pin|MODE_B_Pin
-                          |MODE_C_Pin|MODE_D_Pin, GPIO_PIN_RESET);
+                          |MODE_C_Pin|MODE_D_Pin|test_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, A1_Pin|B1_Pin|C1_Pin|C3_Pin
@@ -216,10 +222,10 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pins : RED_1_Pin YELLOW_1_Pin GREEN_1_Pin RED_2_Pin
                            YELLOW_2_Pin GREEN_2_Pin MODE_A_Pin MODE_B_Pin
-                           MODE_C_Pin MODE_D_Pin */
+                           MODE_C_Pin MODE_D_Pin test_Pin */
   GPIO_InitStruct.Pin = RED_1_Pin|YELLOW_1_Pin|GREEN_1_Pin|RED_2_Pin
                           |YELLOW_2_Pin|GREEN_2_Pin|MODE_A_Pin|MODE_B_Pin
-                          |MODE_C_Pin|MODE_D_Pin;
+                          |MODE_C_Pin|MODE_D_Pin|test_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
@@ -228,7 +234,7 @@ static void MX_GPIO_Init(void)
   /*Configure GPIO pins : BUTTON_1_Pin BUTTON_2_Pin BUTTON_3_Pin */
   GPIO_InitStruct.Pin = BUTTON_1_Pin|BUTTON_2_Pin|BUTTON_3_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Pull = GPIO_PULLUP;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
   /*Configure GPIO pins : A1_Pin B1_Pin C1_Pin C3_Pin

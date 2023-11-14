@@ -10,11 +10,11 @@
 void runMode1(){
 	switch(status){
 	case INIT:
-		count1 = 15;
-		count2 = 10;
+		count1 = 30;
+		count2 = 25;
 		status = M1_RED_GREEN;
 		setTimer1(1000);
-		setTimer2(10000);
+		setTimer2(25000);
 		break;
 	case M1_RED_GREEN:
 		HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, SET);
@@ -45,14 +45,11 @@ void runMode1(){
 
 		if (is_button_pressed(0)){
 			status = M2;
-			HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, RESET);
-			HAL_GPIO_WritePin(RED_2_GPIO_Port, RED_2_Pin, RESET);
-			count1 = 10;
+			count1 = 20;
 			count2 = 0;
 			setTimer1(1000);
-			setTimer2(10000);
+			setTimer2(25000);
 			setTimer3(250);
-			display7SEG_mode(2);
 		}
 		break;
 	case M1_RED_YELLOW:
@@ -75,22 +72,19 @@ void runMode1(){
 
 		if (timer2_flag == 1){
 			status = M1_GREEN_RED;
-			count1 = 10;
-			count2 = 15;
+			count1 = 25;
+			count2 = 30;
 			setTimer1(1000);
-			setTimer2(10000);
+			setTimer2(25000);
 		}
 
 		if (is_button_pressed(0)){
 			status = M2;
-			HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, RESET);
-			HAL_GPIO_WritePin(RED_2_GPIO_Port, RED_2_Pin, RESET);
-			count1 = 10;
+			count1 = 20;
 			count2 = 0;
 			setTimer1(1000);
-			setTimer2(10000);
+			setTimer2(25000);
 			setTimer3(250);
-			display7SEG_mode(2);
 		}
 		break;
 	case M1_GREEN_RED:
@@ -121,14 +115,11 @@ void runMode1(){
 
 		if (is_button_pressed(0)){
 			status = M2;
-			HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, RESET);
-			HAL_GPIO_WritePin(RED_2_GPIO_Port, RED_2_Pin, RESET);
-			count1 = 10;
+			count1 = 20;
 			count2 = 0;
 			setTimer1(1000);
-			setTimer2(10000);
+			setTimer2(25000);
 			setTimer3(250);
-			display7SEG_mode(2);
 		}
 		break;
 	case M1_YELLOW_RED:
@@ -151,22 +142,19 @@ void runMode1(){
 
 		if (timer2_flag == 1){
 			status = M1_RED_GREEN;
-			count1 = 15;
-			count2 = 10;
+			count1 = 30;
+			count2 = 25;
 			setTimer1(1000);
-			setTimer2(10000);
+			setTimer2(25000);
 		}
 
 		if (is_button_pressed(0)){
 			status = M2;
-			HAL_GPIO_WritePin(RED_1_GPIO_Port, RED_1_Pin, RESET);
-			HAL_GPIO_WritePin(RED_2_GPIO_Port, RED_2_Pin, RESET);
-			count1 = 10;
+			count1 = 20;
 			count2 = 0;
 			setTimer1(1000);
-			setTimer2(10000);
+			setTimer2(25000);
 			setTimer3(250);
-			display7SEG_mode(2);
 		}
 		break;
 	default:

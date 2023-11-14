@@ -101,6 +101,8 @@ void Error_Handler(void);
 #define MODE_C_GPIO_Port GPIOA
 #define MODE_D_Pin GPIO_PIN_14
 #define MODE_D_GPIO_Port GPIOA
+#define test_Pin GPIO_PIN_15
+#define test_GPIO_Port GPIOA
 #define D1_Pin GPIO_PIN_3
 #define D1_GPIO_Port GPIOB
 #define A2_Pin GPIO_PIN_4

@@ -26,8 +26,8 @@ void setTimer2(int duration){
 }
 
 void setTimer3(int duration){
-	timer2_counter = duration / TIMER_CYCLE;
-	timer2_flag = 0;
+	timer3_counter = duration / TIMER_CYCLE;
+	timer3_flag = 0;
 }
 
 void timer_run(){
