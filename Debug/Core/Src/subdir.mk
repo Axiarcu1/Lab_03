@@ -13,6 +13,7 @@ C_SRCS += \
 ../Core/Src/mode_1.c \
 ../Core/Src/mode_2.c \
 ../Core/Src/mode_3.c \
+../Core/Src/mode_4.c \
 ../Core/Src/stm32f1xx_hal_msp.c \
 ../Core/Src/stm32f1xx_it.c \
 ../Core/Src/syscalls.c \
@@ -29,6 +30,7 @@ OBJS += \
 ./Core/Src/mode_1.o \
 ./Core/Src/mode_2.o \
 ./Core/Src/mode_3.o \
+./Core/Src/mode_4.o \
 ./Core/Src/stm32f1xx_hal_msp.o \
 ./Core/Src/stm32f1xx_it.o \
 ./Core/Src/syscalls.o \
@@ -45,6 +47,7 @@ C_DEPS += \
 ./Core/Src/mode_1.d \
 ./Core/Src/mode_2.d \
 ./Core/Src/mode_3.d \
+./Core/Src/mode_4.d \
 ./Core/Src/stm32f1xx_hal_msp.d \
 ./Core/Src/stm32f1xx_it.d \
 ./Core/Src/syscalls.d \
@@ -60,7 +63,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/7_segment.cyclo ./Core/Src/7_segment.d ./Core/Src/7_segment.o ./Core/Src/7_segment.su ./Core/Src/button.cyclo ./Core/Src/button.d ./Core/Src/button.o ./Core/Src/button.su ./Core/Src/global.cyclo ./Core/Src/global.d ./Core/Src/global.o ./Core/Src/global.su ./Core/Src/input_reading.cyclo ./Core/Src/input_reading.d ./Core/Src/input_reading.o ./Core/Src/input_reading.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/mode_1.cyclo ./Core/Src/mode_1.d ./Core/Src/mode_1.o ./Core/Src/mode_1.su ./Core/Src/mode_2.cyclo ./Core/Src/mode_2.d ./Core/Src/mode_2.o ./Core/Src/mode_2.su ./Core/Src/mode_3.cyclo ./Core/Src/mode_3.d ./Core/Src/mode_3.o ./Core/Src/mode_3.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su ./Core/Src/timer.cyclo ./Core/Src/timer.d ./Core/Src/timer.o ./Core/Src/timer.su
+	-$(RM) ./Core/Src/7_segment.cyclo ./Core/Src/7_segment.d ./Core/Src/7_segment.o ./Core/Src/7_segment.su ./Core/Src/button.cyclo ./Core/Src/button.d ./Core/Src/button.o ./Core/Src/button.su ./Core/Src/global.cyclo ./Core/Src/global.d ./Core/Src/global.o ./Core/Src/global.su ./Core/Src/input_reading.cyclo ./Core/Src/input_reading.d ./Core/Src/input_reading.o ./Core/Src/input_reading.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/mode_1.cyclo ./Core/Src/mode_1.d ./Core/Src/mode_1.o ./Core/Src/mode_1.su ./Core/Src/mode_2.cyclo ./Core/Src/mode_2.d ./Core/Src/mode_2.o ./Core/Src/mode_2.su ./Core/Src/mode_3.cyclo ./Core/Src/mode_3.d ./Core/Src/mode_3.o ./Core/Src/mode_3.su ./Core/Src/mode_4.cyclo ./Core/Src/mode_4.d ./Core/Src/mode_4.o ./Core/Src/mode_4.su ./Core/Src/stm32f1xx_hal_msp.cyclo ./Core/Src/stm32f1xx_hal_msp.d ./Core/Src/stm32f1xx_hal_msp.o ./Core/Src/stm32f1xx_hal_msp.su ./Core/Src/stm32f1xx_it.cyclo ./Core/Src/stm32f1xx_it.d ./Core/Src/stm32f1xx_it.o ./Core/Src/stm32f1xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32f1xx.cyclo ./Core/Src/system_stm32f1xx.d ./Core/Src/system_stm32f1xx.o ./Core/Src/system_stm32f1xx.su ./Core/Src/timer.cyclo ./Core/Src/timer.d ./Core/Src/timer.o ./Core/Src/timer.su
 
 .PHONY: clean-Core-2f-Src
 
