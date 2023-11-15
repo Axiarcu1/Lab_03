@@ -15,17 +15,17 @@ int timer2_flag = 0;
 int timer3_flag = 0;
 int TIMER_CYCLE = 10;
 
-void setTimer1(int duration){
+void setTimer1(int duration){	//set timer interrupt for every second counts decrease
 	timer1_counter = duration / TIMER_CYCLE;
 	timer1_flag = 0;
 }
 
-void setTimer2(int duration){
+void setTimer2(int duration){	//set timer interrupt for switching between state
 	timer2_counter = duration / TIMER_CYCLE;
 	timer2_flag = 0;
 }
 
-void setTimer3(int duration){
+void setTimer3(int duration){	//set timer interrupt for 2Hz blinking led
 	timer3_counter = duration / TIMER_CYCLE;
 	timer3_flag = 0;
 }

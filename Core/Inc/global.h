@@ -23,4 +23,8 @@ extern int count1;
 extern int count2;
 extern int status;
 
+extern int red_timer;
+extern int yellow_timer;
+extern int green_timer;
+
 #endif /* INC_GLOBAL_H_ */

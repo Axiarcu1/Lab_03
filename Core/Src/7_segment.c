@@ -8,7 +8,7 @@
 #include "main.h"
 #include "7_segment.h"
 
-void display7SEG_1 (int counter){
+void display7SEG_1 (int counter){	//display counter for traffic led group 1
 	int digit_1 = counter/10;
 	int digit_2 = counter%10;
 
@@ -135,7 +135,7 @@ void display7SEG_1 (int counter){
 	}
 }
 
-void display7SEG_2 (int counter){
+void display7SEG_2 (int counter){	//display counter for traffic led group 2
 	int digit_1 = counter/10;
 	int digit_2 = counter%10;
 
@@ -262,7 +262,7 @@ void display7SEG_2 (int counter){
 	}
 }
 
-void display7SEG_mode (int counter){
+void display7SEG_mode (int counter){	//display mode
 	if (counter == 1){
 		HAL_GPIO_WritePin(MODE_A_GPIO_Port, MODE_A_Pin, SET);
 		HAL_GPIO_WritePin(MODE_B_GPIO_Port, MODE_B_Pin, RESET);
