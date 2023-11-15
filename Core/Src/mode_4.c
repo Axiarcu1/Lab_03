@@ -46,6 +46,12 @@ void runMode4(){	//mode 4
 		if (is_button_pressed(2)){	//set value when button 3 is pressed
 			count1 = count2;
 			green_timer = count2;
+			if (red_timer > yellow_timer + green_timer){
+				green_timer += red_timer - (yellow_timer + green_timer);
+			}
+			else if (red_timer < yellow_timer + green_timer){
+				red_timer += (yellow_timer + green_timer) - red_timer;
+			}
 			setTimer2(count2*1000);
 			count2 = 0;
 		}
